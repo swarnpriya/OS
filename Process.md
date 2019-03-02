@@ -36,7 +36,7 @@ In XINU there is only a single owner, one global context, one global address.
 
 ### prstate: 
 Current status of process (running, waiting, current, receiving(waiting to receive a message), sleeping(delayed for specic
-time), suspended(not permitted to execute) etc)
+time), suspended(not permitted to execute), ready(present in the ready list) etc)
 ### prprio: 
 Priotity of the process (integer)
 ### prstkptr: 
