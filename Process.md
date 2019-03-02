@@ -27,14 +27,23 @@
 - Location of data and code
 - Process status like waiting, curr, nulll, ready etc.
 
-Q) Where do we store current program counter and current register values of currently running program?
+# Q.
+Where do we store current program counter and current register values of currently running program?
+
 Stack
 
 In XINU there is only a single owner, one global context, one global address.
 
-### prstate: Current status of process (running, waiting, current etc)
-### prprio: Priotity of the process (integer)
-### prstkptr: Saved value of the process stack pointer when the process is not executing
-### prstkbase: Address of the base of the process's stack
-### prstlen : Maximum size that process stack can grow
-### prname: Indentifier for the process (humand use this to refer to the process)
+### prstate: 
+Current status of process (running, waiting, current, receiving(waiting to receive a message), sleeping(delayed for specic
+time), suspended(not permitted to execute) etc)
+### prprio: 
+Priotity of the process (integer)
+### prstkptr: 
+Saved value of the process stack pointer when the process is not executing
+### prstkbase: 
+Address of the base of the process's stack
+### prstlen :
+Maximum size that process stack can grow
+### prname: 
+Indentifier for the process (humand use this to refer to the process)
