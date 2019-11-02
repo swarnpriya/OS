@@ -37,5 +37,17 @@
    - type: Distinguishes between files, directories and special files. 
  ```
  struct dinode {
-      short type;       file type (file or directory)
+      short type;       file type (file or directory) if type is 0 means on-disk inode is free 
+      short inlink;     counts the number of directories that refer to this inode
+      uint size;        number of bytes of content in the file
+      uint address;     array records block numbers of disk blocks holding file's content
+}
+```
+### Kernel keeps record of set of active nodes (in-memory copy of inode)
+- Kernel stores an inode in memory only if there are C pointers referring to that node. 
+```
+struct inode {
+      int ref          the number of C pointers referring to the in-memory inode if the ref count drops to zero then kernel                        discard the inode. Pointers can be to a file descritor or to a directory
+      
+      
       
