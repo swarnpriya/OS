@@ -48,6 +48,11 @@
 ```
 struct inode {
       int ref          the number of C pointers referring to the in-memory inode if the ref count drops to zero then kernel                        discard the inode. Pointers can be to a file descritor or to a directory
-      
+```
+
+### Important Notes related to lab:
+(1) We should not implement on-disk inodes. We just need in-memory inodes. 
+(2) int 0x80 insstruction is used to invoke system call in Linux on x86 processor.
+
       
       
